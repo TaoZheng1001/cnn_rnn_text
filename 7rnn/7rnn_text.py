@@ -198,22 +198,9 @@ def create_model(hps, vocab_size, num_classes):
             (loss, accuracy),
             (train_op, global_step))
 
-
 placeholders, metrics, others = create_model(
     hps, vocab_size, num_classes)
 
-inputs, outputs, keep_prob = placeholders
-loss, accuracy = metrics
-train_op, global_step = others
-
-placeholders, metrics, others = create_model(
-    hps, vocab_size, num_classes)
-
-inputs, outputs, keep_prob = placeholders
-loss, accuracy = metrics
-train_op, global_step = others
-
-placeholders, metrics, others = create_model(vocab_size, num_classes)
 inputs, outputs, keep_prob = placeholders
 loss, accuracy = metrics
 train_op, global_step = others
@@ -222,7 +209,7 @@ init_op = tf.global_variables_initializer()
 train_keep_prob_value = 0.8
 test_keep_prob_value = 1.0
 
-num_train_steps = 5000
+num_train_steps = 10000
 
 # Train: 99.7%
 # Valid: 92.7%
